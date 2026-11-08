@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин игрушек</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">ванбирис</div>
+      <ul class="menu">
+        <li><a  href="reg.html">зарегистрироватся</a></li>
+        <li><a href="#">корзина</a></li>
+        <li><a href="#">каталог</a></li>
+        <li><a href="#">В пути</a></li>
+      </ul>
+  </nav>
+  <br>
+    <div class="slider-container">
+      <div class="slides" id="slides">
+      <div class="slide">
+          <img src="https://avatars.mds.yandex.net/i?id=130498fcea06062435a9a636b8cd9b4e_l-5644946-images-thumbs&n=13" alt="Slide 1" />
+      <div class="caption">покупай билеты</div>
+      </div>
+      <div class="slide">
+          <img src="https://avatars.mds.yandex.net/i?id=8e7ef446cef3668185982dd9f43f7074_l-5506301-images-thumbs&n=13" alt="Slide 2" />
+      <div class="caption">покупай билеты</div>
+      </div>
+      <div class="slide">
+        <img src="https://avatars.mds.yandex.net/i?id=aaf189fc2b34750ed26c91e623e11bb6_l-2409372-images-thumbs&n=13" alt="Slide 3" />
+    <div class="caption">покупай билеты</div>
+    </div>
+    </div>
+
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+    <div class="dots-container" id="dots-container"></div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const slidesContainer = document.getElementById('slides');
+    const dotsContainer = document.getElementById('dots-container');
+    let currentSlide = 0;
+
+    // Создаем точки-индикаторы
+    slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    const updateSlide = () => {
+      slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    };
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      } else if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+      }
+      updateSlide();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlide();
+    }
+
+    // Автопрокрутка каждые 5 секунд
+    setInterval(() => changeSlide(1), 5000);
+  </script>
+   
+
+   
+
+
+    <div class="card">  
+   
+        
+        <img src="pAftLdy1RTOMXr5T.jpg"
+        alt="LEGO"
+        width="170"
+        height="200"><div class="badge">скидка 30%</div>
+        <h2>Конструктор LEGO</h2>
+        <p class="price">2500 руб.</p>
+        <p class="description">Набор из 500 деталей для творчества</p>
+        <a href="reg.html" class="button">Купить</a> 
+              <input type="checkbox" id="c1" checked><label for="c1">бонусы</label>       
+        <br>
+        <label for="city">оплата:</label>
+
+<select id="city" name="city">
+    <option value="">с бонусной карточкой</option>
+    <option value="moscow">оплата при получении</option>
+    <option value="spb">оплата сейчас</option>
+    
+</select>
+    </div>
+
+    <div class="card">
+        <img src="ph_03.jpg"
+        alt="nnastolka"
+        width="170"
+        height="200"><div class="badge">скидка 30%</div>
+        <h2>Настольная игра</h2>
+        <p class="price">1200 руб.</p>
+        <p class="description">Увлекательная игра для всей семьи</p>
+        <a href="reg.html" class="button">Купить</a>
+        
+      <input type="checkbox" id="c1" checked><label for="c1">бонусы</label>
+   
+  
+                <br>
+        <label for="city">оплата:</label>
+
+<select id="city" name="city">
+    <option value="">с бонусной карточкой</option>
+    <option value="moscow">оплата при получении</option>
+    <option value="spb">оплата сейчас</option>
+    
+</select>
+    </div>
+
+    <div class="card">     
+        <img src="teddi.jpg"
+        alt="teddi"
+        width="170"
+        height="200"><div class="badge">скидка 30%</div>
+        <h2>Мягкая игрушка</h2>
+        <p class="price">800 руб.</p>
+        <p class="description">Плюшевый мишка высотой 40 см</p>
+        <a href="reg.html" class="button">Купить</a>
+              <input type="checkbox" id="c1" checked><label for="c1">бонусы</label>
+                <br>
+        <label for="city">оплата:</label>
+
+<select id="city" name="city">
+    <option value="">с бонусной карточкой</option>
+    <option value="moscow">оплата при получении</option>
+    <option value="spb">оплата сейчас</option>
+    </select>
+    </div>
+    
+  <div class="card">     
+        <img src="6ca5e6e5-9520-4644-ac54-f13e3e1ef5be.jpg"
+        alt="teddi"
+        width="170"
+        height="200"><div class="badge">скидка 30%</div>
+        <h2>симпл супер
+            дупер
+        </h2>
+        <p class="price">800 руб.</p>
+        <p class="description">играет в кс и в кипер спорте</p>
+        <a href="reg.html" class="button">Купить</a>
+              <input type="checkbox" id="c1" checked><label for="c1">бонусы</label>
+                <br>
+        <label for="city">оплата:</label>
+        
+
+<select id="city" name="city">
+    <option value="">с бонусной карточкой</option>
+    <option value="moscow">оплата при получении</option>
+    <option value="spb">оплата сейчас</option>
+    
+</select>
+    </div>
+      <div class="card">     
+        <img src="half-life3.jpg"
+        alt="гейб"
+        width="170"
+        height="200">
+        <h2>гейб супер милиардер</h2>
+        <p class="price">10000 руб.</p>
+        <p class="description">создатель стима и кс и ещё куриц</p>
+        <a href="reg.html" class="button">Купить</a>
+              <input type="checkbox" id="c1" checked><label for="c1">бонусы</label>
+        <br>
+        <label for="city">оплата:</label>
+
+<select id="city" name="city">
+    <option value="">с бонусной карточкой</option>
+    <option value="moscow">оплата при получении</option>
+    <option value="spb">оплата сейчас</option>
+    
+
+
+    
+</select>
+    </div>
+
+</body>
+</html>

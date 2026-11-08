@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<style>
+    h1 {color: rgb(0, 34, 249);
+    text-align: center;}
+    body {background-color: black;}
+  .dm-table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: 20px; }
+  .dm-table th, .dm-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #30363d; color: #c9d1d9; }
+  .dm-table th { background: #1f6feb; color: #fff; }
+  .dm-table tbody tr:nth-child(even) { background: rgba(255,255,255,.05); }
+  .dm-table tbody tr { transition: background .2s ease; }
+  .dm-table tbody tr:hover { background: rgba(88,166,255,.22); cursor: pointer; }</style>
+<body>
+     <nav class="navbar">
+        <div class="logo">ванбирис</div>
+        <ul class="menu">
+            <li><a href="POAP.html">статистика</a></li>
+            <li><a href="reg.html">выход</a></li>
+            <li><a href="#">корзина</a></li>
+            <li><a href="katalog.html">каталог</a></li>
+            <li><a href="#">В пути</a></li>
+        </ul>
+    </nav>
+    <h1>продано</h1>
+    <div class="demo-label">/* зебра: tr:nth-child(even) • наведите курсор на строку */</div>
+    <table class="dm-table">
+      <thead><tr><th>вещи</th><th>за неделю</th><th>все время</th></tr></thead>
+      <tbody>
+        <tr><td>мишка</td><td>758</td><td>1.564</td></tr>
+        <tr><td>лего</td><td>127</td><td>1.689</td></tr>
+        <tr><td>настолка</td><td>300</td><td>3.536</td></tr>
+        
+      </tbody>
+    </table>
+</div>
+</body>
+</html>
